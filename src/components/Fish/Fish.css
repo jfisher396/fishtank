@@ -1,5 +1,6 @@
 .Fish {
     display: flex;
+    padding: 10px;
 }
 
 .Fish .body {
@@ -10,11 +11,16 @@
     -o-border-radius: 100%;
     width: 120px;
     height: 30px;
-    background-color: salmon;
+    background-color: silver;
 }
 
 .Fish .tail {
     width: 30px;
     height: 30px;
-    background-color: salmon;
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    background: linear-gradient(45deg, aquamarine 0%, aquamarine 50%, silver 50%, silver 100%);
 }
