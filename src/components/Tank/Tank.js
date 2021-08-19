@@ -5,9 +5,9 @@ import Fish from "../Fish/Fish"
 function Tank() {
     return (
         <div className="Tank">
-            <Fish />
-            <Fish />
-            <Fish />
+            <Fish color="blue"/>
+            <Fish color="purple"/>
+            <Fish color="yellow"/>
         </div>
     )
 }
