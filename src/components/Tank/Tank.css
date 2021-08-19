@@ -1,10 +1,15 @@
 .Tank {
-    width: 90vw;
-    min-height: 80vh;
+    width: 80vw;
+    min-height: 70vh;
     border-top: 30px solid black;
-    border-bottom: 50px solid black;
-    border-left: 10px solid hsla(0, 0%, 34%, 0.3);
-    border-right: 10px solid hsla(0, 0%, 34%, 0.3);
-    background-color: aquamarine;
+    border-bottom: 30px solid black;
+    border-left: 1px solid hsla(0, 0%, 34%, 0.3);
+    border-right: 1px solid hsla(0, 0%, 34%, 0.3);
+    background-color: hsla(160, 100%, 85%, 0.8);
+    /* box-shadow: 0 50px 24px #817F7F inset, 0 -100px 134px #DCDCDC inset; */
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
