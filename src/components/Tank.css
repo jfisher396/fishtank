@@ -1,0 +1,7 @@
+.Tank {
+    width: 90vw;
+    min-height: 80vh;
+    border: 5px solid black;
+    background-color: aquamarine;
+    margin: 0 auto;
+}
