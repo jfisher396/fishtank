@@ -1,5 +1,5 @@
 import './App.css';
-import Tank from './components/Tank'
+import Tank from './components/Tank/Tank'
 
 function App() {
   return (

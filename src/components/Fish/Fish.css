@@ -1,0 +1,20 @@
+.Fish {
+    display: flex;
+}
+
+.Fish .body {
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    width: 120px;
+    height: 30px;
+    background-color: salmon;
+}
+
+.Fish .tail {
+    width: 30px;
+    height: 30px;
+    background-color: salmon;
+}
