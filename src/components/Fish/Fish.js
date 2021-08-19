@@ -1,23 +1,29 @@
-import React from 'react'
-import "./Fish.css"
+import React from "react";
+import "./Fish.css";
 
 function Fish(props) {
-
-    const styles = {
-        fish: {},
-        body: {
-            backgroundColor: props.color
-        },
-        tail: {
-            background: `linear-gradient(45deg, transparent 0%, transparent 50%, ${props.color} 50%, ${props.color} 100%)`
-        }
-    }
-    return (
-        <div className="Fish" style={styles.fish}>
-            <div className="tail" style={styles.tail}></div>
-            <div className="body" style={styles.body}></div>
-        </div>
-    )
+  const height = props.width / 3;
+  const styles = {
+    fish: {
+      width: `${props.width}px`,
+      height: `${height}px`,
+    },
+    body: {
+      backgroundColor: props.color,
+      width: `${props.width * 0.7}px`,
+      height: `${height}px`,
+    },
+    tail: {
+      background: `linear-gradient(45deg, transparent 0%, transparent 50%, ${props.color} 50%, ${props.color} 100%)`,
+      width: `${props.width * 0.3}px`,
+    },
+  };
+  return (
+    <div className="Fish" style={styles.fish}>
+      <div className="tail" style={styles.tail}></div>
+      <div className="body" style={styles.body}></div>
+    </div>
+  );
 }
 
-export default Fish
+export default Fish;
