@@ -4,7 +4,7 @@ import Tank from './components/Tank/Tank'
 function App() {
   return (
     <>
-    <h1>Fishtank</h1>
+    <h1>My Fishtank</h1>
     <Tank />
     </>
   );
