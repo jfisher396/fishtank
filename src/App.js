@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./App.css";
 import Tank from "./components/Tank/Tank";
 import AddFishForm from "./components/AddFishForm/AddFishForm";
+import API from "./utils/API";
 
 function App() {
   const [addFishFormData, setAddFishFormData] = useState({
-    color: "#ff6348",
+    color1: "#ff6348",
+    color2: "black",
     width: 100,
   });
 
@@ -16,10 +18,17 @@ function App() {
       [name]: value,
     });
   };
+
+  const saveFishButton = (event) => {
+    event.preventDefault();
+    API.saveFish(addFishFormData).then((res) => {
+      console.log('fish saved')
+    })
+  }
   return (
     <>
       <h1>My Fishtank</h1>
-      <AddFishForm formData={addFishFormData} changeHandler={handleFishFormChange}  />
+      <AddFishForm formData={addFishFormData} changeHandler={handleFishFormChange} formSubmit={saveFishButton} />
       <Tank />
     </>
   );

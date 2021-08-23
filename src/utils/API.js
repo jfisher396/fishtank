@@ -1,9 +1,13 @@
-import axios from "axios"
+import axios from "axios";
 
 const API = {
-    getAllFish: function() {
-        return axios.get("http://localhost:8080/api/fishes")
-    }
-}
+  getAllFish: function () {
+    return axios.get("http://localhost:8080/api/fishes");
+  },
 
-export default API
+  saveFish: function (fishData) {
+    return axios.post("http://localhost:8080/api/fishes", fishData);
+  },
+};
+
+export default API;
