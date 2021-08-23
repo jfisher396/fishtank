@@ -1,12 +1,13 @@
 import React from 'react'
 
-function AddFishForm() {
+function AddFishForm(props) {
     return (
         <form>
             <label>Width:</label>
-            <input name="width" type="number" />
+            <input onChange={props.changeHandler} value={props.formData.width} name="width" type="number" min="25" max="500"/>
             <label>Color:</label>
-            <input name="width" type="color" />
+            <input onChange={props.changeHandler} value={props.formData.color} name="color" type="color" />
+            <button>Save fish!</button>
         </form>
     )
 }
