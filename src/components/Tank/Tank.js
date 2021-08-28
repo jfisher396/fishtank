@@ -3,20 +3,23 @@ import "./Tank.css";
 import Fish from "../Fish/Fish";
 import API from "../../utils/API"
 
-function Tank() {
+function Tank(props) {
+
+  // console.log(props.fishFromDb)
   const [fishes, setFishes] = useState([]);
 
   useEffect(() => {
       API.getAllFish().then((res) => {
+          console.log(res.data)
           setFishes(res.data)
       })
-  }, [])
+  }, [props.fishFromDb])
 
   return (
     <>
       <div className="Tank">
         {fishes.map((fish) => (
-          <Fish key={fish.width} color={fish.color} width={fish.width} />
+          <Fish key={fish.id} color1={fish.color1} color2= {fish.color2} width={fish.width} />
         ))}
       </div>
       <div>

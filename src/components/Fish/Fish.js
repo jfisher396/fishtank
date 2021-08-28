@@ -9,12 +9,12 @@ function Fish(props) {
       height: `${height}px`,
     },
     body: {
-      backgroundColor: props.color,
+      backgroundColor: props.color1,
       width: `${props.width * 0.7}px`,
       height: `${height}px`,
     },
     tail: {
-      background: `linear-gradient(45deg, transparent 0%, transparent 50%, ${props.color} 50%, ${props.color} 100%)`,
+      background: `linear-gradient(45deg, transparent 0%, transparent 50%, ${props.color1} 50%, ${props.color1} 100%)`,
       width: `${height}px`,
     },
   }

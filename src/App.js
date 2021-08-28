@@ -6,10 +6,12 @@ import API from "./utils/API";
 
 function App() {
   const [addFishFormData, setAddFishFormData] = useState({
-    color1: "#ff6348",
-    color2: "black",
+    color1: "#FFA500",
+    color2: "#000000",
     width: 100,
   });
+
+  const [retrieveFish, setRetrieveFish] = useState([]);
 
   const handleFishFormChange = (event) => {
     const { name, value } = event.target;
@@ -22,14 +24,25 @@ function App() {
   const saveFishButton = (event) => {
     event.preventDefault();
     API.saveFish(addFishFormData).then((res) => {
-      console.log('fish saved')
-    })
-  }
+      API.getAllFish().then((res) => {
+        setRetrieveFish(res.data);
+      });
+      setAddFishFormData({
+        color1: "#FFA500",
+        color2: "#000000",
+        width: 100,
+      });
+    });
+  };
   return (
     <>
       <h1>My Fishtank</h1>
-      <AddFishForm formData={addFishFormData} changeHandler={handleFishFormChange} formSubmit={saveFishButton} />
-      <Tank />
+      <AddFishForm
+        formData={addFishFormData}
+        changeHandler={handleFishFormChange}
+        formSubmit={saveFishButton}
+      />
+      <Tank fishFromDb={retrieveFish} />
     </>
   );
 }
