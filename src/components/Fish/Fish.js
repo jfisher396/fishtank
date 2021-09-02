@@ -2,6 +2,8 @@ import React from "react";
 import "./Fish.css";
 
 function Fish(props) {
+
+  // CSS styling for fish; comes from state in the tank component
   const height = props.width / 3;
   const styles = {
     fish: {
@@ -19,6 +21,7 @@ function Fish(props) {
     },
   }
 
+  // rendering of fish components
   return (
     <div className="Fish" style={styles.fish}>
       <div className="tail" style={styles.tail}></div>
