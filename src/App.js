@@ -3,6 +3,7 @@ import "./App.css";
 import Tank from "./components/Tank/Tank";
 import AddFishForm from "./components/AddFishForm/AddFishForm";
 import API from "./utils/API";
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
   // holds form data in state ; sets default colors to orange and black
@@ -47,6 +48,7 @@ function App() {
   };
   return (
     <>
+      <Navbar />
       <h1>My Fishtank</h1>
       {showAddFishForm ? (
         <AddFishForm

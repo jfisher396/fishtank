@@ -6,8 +6,10 @@ function AddFishForm(props) {
     // form for creating a new fish;
     // props come from the app component;
     <form onSubmit={props.formSubmit}>
+      <div className="form-group">
       <label>Width:</label>
       <input
+        // className="input-group"
         onChange={props.changeHandler}
         value={props.formData.width}
         name="width"
@@ -29,7 +31,8 @@ function AddFishForm(props) {
         name="color2"
         type="color"
       />
-      <button>Save fish!</button>
+      <button type="button" className="btn btn-warning">Save fish!</button>
+      </div>
     </form>
   );
 }
