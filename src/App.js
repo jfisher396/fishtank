@@ -55,7 +55,7 @@ function App() {
           formSubmit={saveFishButton}
         />
       ) : (
-        <button onClick={() => setShowAddFishForm(true)}>Add Fish</button>
+        <button type="button" className="btn btn-primary" onClick={() => setShowAddFishForm(true)}>Add Fish</button>
       )}
       {/* sends fish form data and handlers back to the form */}
 
