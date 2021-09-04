@@ -12,6 +12,9 @@ function App() {
     width: 100,
   });
 
+  // hides the add fish form until the "Add Fish" button is clicked
+  const [showAddFishForm, setShowAddFishForm] = useState(false);
+
   // holds fish data from db in state
   const [retrieveFish, setRetrieveFish] = useState([]);
 
@@ -24,7 +27,7 @@ function App() {
     });
   };
 
-  // click handler for save button; 
+  // click handler for save button;
   // takes data from addFishFormData state and pushes it to db;
   // then retrieves data from the db and sets it to retrieveFish state;
   // resets user input fields and colors to default
@@ -39,17 +42,23 @@ function App() {
         color2: "#000000",
         width: 100,
       });
+      setShowAddFishForm(false)
     });
   };
   return (
     <>
       <h1>My Fishtank</h1>
+      {showAddFishForm ? (
+        <AddFishForm
+          formData={addFishFormData}
+          changeHandler={handleFishFormChange}
+          formSubmit={saveFishButton}
+        />
+      ) : (
+        <button onClick={() => setShowAddFishForm(true)}>Add Fish</button>
+      )}
       {/* sends fish form data and handlers back to the form */}
-      <AddFishForm
-        formData={addFishFormData}
-        changeHandler={handleFishFormChange}
-        formSubmit={saveFishButton}
-      />
+
       {/* sends retrieved fish from db to the tank componenent for rendering */}
       <Tank fishFromDb={retrieveFish} />
     </>
