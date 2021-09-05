@@ -1,11 +1,14 @@
 import React from "react";
 
-function LoginForm() {
+function LoginForm(props) {
   return (
     <form>
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input
+          value={props.formData.email}
+          onChange={props.handleChange}
+          name="email"
           type="email"
         //   className="form-control"
           id="exampleInputEmail1"
@@ -16,11 +19,14 @@ function LoginForm() {
         </small>
       </div>
       <div className="form-group">
-        <label for="exampleInputPassword1">Password</label>
+        <label for="password">Password</label>
         <input
+          value={props.formData.password}
+          name="password"
+          onChange={props.handleChange}
           type="password"
         //   className="form-control"
-          id="exampleInputPassword1"
+          id="password-input"
         />
       </div>
       <button type="submit" className="btn btn-primary">

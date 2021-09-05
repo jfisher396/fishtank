@@ -3,7 +3,7 @@ import "./App.css";
 import Tank from "./components/Tank/Tank";
 import AddFishForm from "./components/AddFishForm/AddFishForm";
 import API from "./utils/API";
-import Navbar from './components/Navbar/Navbar'
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   // holds form data in state ; sets default colors to orange and black
@@ -12,6 +12,21 @@ function App() {
     color2: "#000000",
     width: 100,
   });
+
+  // holds login form data in state
+  const [loginFormData, setLoginFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  // change handler for the input form
+  const loginFormInputChange = (event) => {
+    const { name, value } = event.target;
+    setLoginFormData({
+      ...loginFormData,
+      [name]: value,
+    });
+  };
 
   // hides the add fish form until the "Add Fish" button is clicked
   const [showAddFishForm, setShowAddFishForm] = useState(false);
@@ -43,12 +58,15 @@ function App() {
         color2: "#000000",
         width: 100,
       });
-      setShowAddFishForm(false)
+      setShowAddFishForm(false);
     });
   };
   return (
     <>
-      <Navbar />
+      <Navbar
+        loginFormData={loginFormData}
+        loginInputChange={loginFormInputChange}
+      />
       <h1>My Fishtank</h1>
       {showAddFishForm ? (
         <AddFishForm
@@ -57,7 +75,13 @@ function App() {
           formSubmit={saveFishButton}
         />
       ) : (
-        <button type="button" className="btn btn-primary" onClick={() => setShowAddFishForm(true)}>Add Fish</button>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => setShowAddFishForm(true)}
+        >
+          Add Fish
+        </button>
       )}
       {/* sends fish form data and handlers back to the form */}
 

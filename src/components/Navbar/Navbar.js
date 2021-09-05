@@ -3,16 +3,16 @@ import LoginForm from '../LoginForm/LoginForm'
 
 function Navbar(props) {
   return (
-    <div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div lassName="container-fluid">
       <ul className="nav justify-content-end">
         <li className="nav-item">
-          <a className="nav-link active" href="#">
-            Home
-          </a>
+          <a className="nav-link active" href="#">Home</a>
        </li>
       </ul>
-      <LoginForm />
-    </div>
+      <LoginForm handleChange={props.loginInputChange} formData={props.loginFormData} />
+      </div>
+    </nav>
   );
 }
 
