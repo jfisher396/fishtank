@@ -4,7 +4,7 @@ import LoginForm from '../LoginForm/LoginForm'
 function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div lassName="container-fluid">
+        <div className="container-fluid">
       <ul className="nav justify-content-end">
         <li className="nav-item">
           <a className="nav-link active" href="#">Home</a>
